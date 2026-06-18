@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Registration Success Page for CUT Clothing Store">
+    <title>Registration Successful - CUT Clothing Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">👔</span>
+                <span class="logo-text">CUT Clothing</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#categories" class="nav-link">Collections</a></li>
+                <li><a href="form.html" class="nav-link register-link">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="success-container">
+            <div class="success-wrapper">
+                <!-- Success Animation/Icon -->
+                <div class="success-icon">✓</div>
+
+                <!-- Success Message -->
+                <h1>Registration Successful!</h1>
+                <p class="success-message">
+                    Thank you for registering with CUT Clothing Store. 
+                    We're excited to have you as part of our community!
+                </p>
+
+                <!-- Registration Details -->
+                <div class="registration-details">
+                    <div class="detail-card">
+                        <h3>Your Registration Details</h3>
+                        <div class="detail-row">
+                            <span class="detail-label">Customer ID:</span>
+                            <span class="detail-value" id="successCustomerId">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Name:</span>
+                            <span class="detail-value" id="successName">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Email:</span>
+                            <span class="detail-value" id="successEmail">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Registration Date:</span>
+                            <span class="detail-value" id="successDate">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What's Next Section -->
+                <div class="whats-next">
+                    <h3>What's Next?</h3>
+                    <ul>
+                        <li>✓ A confirmation email will be sent to your registered email address</li>
+                        <li>✓ You can now explore our latest collections</li>
+                        <li>✓ Enjoy exclusive deals and early access to new products</li>
+                        <li>✓ Track your orders and manage your preferences</li>
+                    </ul>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="success-actions">
+                    <a href="index.html" class="btn btn-primary btn-large">Return to Home</a>
+                    <a href="form.html" class="btn btn-secondary btn-large">Register Another Customer</a>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="success-footer">
+                    <p>
+                        <strong>Note:</strong> Your registration details have been securely stored. 
+                        You can use your Customer ID and email to access your account in the future.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>CUT Clothing Store - Your destination for premium fashion.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#categories">Collections</a></li>
+                    <li><a href="form.html">Register</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Email: info@cutclothing.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <p>
+                    <a href="#">Facebook</a> | 
+                    <a href="#">Twitter</a> | 
+                    <a href="#">Instagram</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CUT Clothing Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script>
+        // Display success message with data from sessionStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const registrationData = JSON.parse(sessionStorage.getItem('registrationData') || '{}');
+            
+            if (registrationData.customerId) {
+                document.getElementById('successCustomerId').textContent = registrationData.customerId;
+                document.getElementById('successName').textContent = 
+                    `${registrationData.firstName} ${registrationData.lastName}`;
+                document.getElementById('successEmail').textContent = registrationData.email;
+                document.getElementById('successDate').textContent = new Date().toLocaleDateString();
+            }
+            
+            // Clear the stored data after displaying
+            sessionStorage.removeItem('registrationData');
+        });
+    </script>
+</body>
+</html>

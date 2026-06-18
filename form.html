@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Customer Registration Form for CUT Clothing Store">
+    <title>Customer Registration - CUT Clothing Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">👔</span>
+                <span class="logo-text">CUT Clothing</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#categories" class="nav-link">Collections</a></li>
+                <li><a href="form.html" class="nav-link active register-link">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="form-container">
+            <div class="form-wrapper">
+                <h1>Customer Registration</h1>
+                <p class="form-subtitle">Join our community and stay updated with the latest offers</p>
+
+                <!-- Registration Form -->
+                <form id="registrationForm" class="registration-form" novalidate>
+                    <!-- Customer ID (Read-only) -->
+                    <div class="form-group">
+                        <label for="customerId">Customer ID</label>
+                        <input 
+                            type="text" 
+                            id="customerId" 
+                            name="customerId" 
+                            readonly 
+                            placeholder="Auto-generated"
+                            class="form-control readonly"
+                        >
+                        <small class="form-text">This will be automatically generated upon registration</small>
+                    </div>
+
+                    <!-- Personal Information Section -->
+                    <fieldset class="form-section">
+                        <legend>Personal Information</legend>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    placeholder="Enter your first name"
+                                    class="form-control"
+                                    required
+                                >
+                                <span class="error-message" id="firstName-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    placeholder="Enter your last name"
+                                    class="form-control"
+                                    required
+                                >
+                                <span class="error-message" id="lastName-error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    placeholder="example@domain.com"
+                                    class="form-control"
+                                    required
+                                >
+                                <span class="error-message" id="email-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mobile">Mobile Number <span class="required">*</span></label>
+                                <input 
+                                    type="tel" 
+                                    id="mobile" 
+                                    name="mobile" 
+                                    placeholder="10-digit mobile number"
+                                    class="form-control"
+                                    required
+                                >
+                                <span class="error-message" id="mobile-error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="gender">Gender <span class="required">*</span></label>
+                                <select id="gender" name="gender" class="form-control" required>
+                                    <option value="">Select your gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                    <option value="Prefer not to say">Prefer not to say</option>
+                                </select>
+                                <span class="error-message" id="gender-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dob">Date of Birth <span class="required">*</span></label>
+                                <input 
+                                    type="date" 
+                                    id="dob" 
+                                    name="dob" 
+                                    class="form-control"
+                                    required
+                                >
+                                <span class="error-message" id="dob-error"></span>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Address Information Section -->
+                    <fieldset class="form-section">
+                        <legend>Address Information</legend>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City <span class="required">*</span></label>
+                                <input 
+                                    type="text" 
+                                    id="city" 
+                                    name="city" 
+                                    placeholder="Enter your city"
+                                    class="form-control"
+                                    required
+                                >
+                                <span class="error-message" id="city-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="state">State <span class="required">*</span></label>
+                                <input 
+                                    type="text" 
+                                    id="state" 
+                                    name="state" 
+                                    placeholder="Enter your state"
+                                    class="form-control"
+                                    required
+                                >
+                                <span class="error-message" id="state-error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address <span class="required">*</span></label>
+                            <textarea 
+                                id="address" 
+                                name="address" 
+                                placeholder="Enter your complete address"
+                                class="form-control"
+                                rows="3"
+                                required
+                            ></textarea>
+                            <span class="error-message" id="address-error"></span>
+                        </div>
+                    </fieldset>
+
+                    <!-- Preferences Section -->
+                    <fieldset class="form-section">
+                        <legend>Preferences</legend>
+
+                        <div class="form-group">
+                            <label for="category">Preferred Clothing Category <span class="required">*</span></label>
+                            <select id="category" name="category" class="form-control" required>
+                                <option value="">Select a category</option>
+                                <option value="Men">Men</option>
+                                <option value="Women">Women</option>
+                                <option value="Kids">Kids</option>
+                                <option value="Accessories">Accessories</option>
+                                <option value="All">All Categories</option>
+                            </select>
+                            <span class="error-message" id="category-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comments">Comments (Optional)</label>
+                            <textarea 
+                                id="comments" 
+                                name="comments" 
+                                placeholder="Any special requests or comments?"
+                                class="form-control"
+                                rows="4"
+                                maxlength="500"
+                            ></textarea>
+                            <small class="form-text">
+                                <span id="commentCount">0</span>/500 characters
+                            </small>
+                        </div>
+                    </fieldset>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">Submit Registration</button>
+                        <button type="reset" class="btn btn-secondary btn-large">Clear Form</button>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="form-footer">
+                        <small>
+                            By registering, you agree to our Terms and Conditions. 
+                            Your data will be securely stored and used only for our services.
+                        </small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>CUT Clothing Store - Your destination for premium fashion.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#categories">Collections</a></li>
+                    <li><a href="form.html">Register</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Email: info@cutclothing.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <p>
+                    <a href="#">Facebook</a> | 
+                    <a href="#">Twitter</a> | 
+                    <a href="#">Instagram</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CUT Clothing Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/submit.js"></script>
+</body>
+</html>
